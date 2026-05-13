@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSL Curves Editor</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+    <div class="main-view">
+        <canvas id="imageCanvas" class="image-canvas"></canvas>
+    </div>
+
+    <div class="sidebar">
+        <h2>HSL Curves</h2>
+        
+        <div class="control-group">
+            <label for="imageUpload">1. Choose Image</label>
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+
+        <div class="control-group">
+            <label for="inputChannel">2. Input Channel (X-Axis)</label>
+            <select id="inputChannel">
+                <option value="l" selected>Lightness</option>
+                <option value="h">Hue</option>
+                <option value="s">Saturation</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="outputChannel">3. Output Channel (Y-Axis)</label>
+            <select id="outputChannel">
+                <option value="l" selected>Lightness</option>
+                <option value="h">Hue</option>
+                <option value="s">Saturation</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>4. Curve Adjustment</label>
+            <div id="curveContainer">
+                <div id="yAxisPreview" class="l"></div>
+                <canvas id="curveCanvas" class="curve-canvas" width="256" height="256"></canvas>
+                <div></div>
+                <div id="xAxisPreview" class="l"></div>
+            </div>
+            <div class="instructions">
+                • <strong>Click</strong> to add a point.<br>
+                • <strong>Drag</strong> to move points.<br>
+                • <strong>Double-click</strong> a point to remove it.
+            </div>
+        </div>
+        
+        <button id="resetBtn">Reset</button>
+        <button id="saveBtn">Save</button>
+    </div>
+    <script src="js/color-science.js"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+:root {
+    --color-base-01: #252525;
+    --color-base-02: #353535;
+    --color-text: #ffffff;
+    --color-accent-01: #007BFF;
+    --color-accent-02: #3998FF;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    background: var(--color-base-01);
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    flex: 0;
+    background: var(--color-base-02);
+    color: var(--color-text);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.main-view {
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+canvas.image-canvas {
+    max-width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+canvas.curve-canvas {
+    background: var(--color-base-01);
+    border-radius: 5px;
+    cursor: crosshair;
+    display: block;
+    box-shadow: var(--shadow);
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+select {
+    background: var(--color-base-01);
+    border: none;
+    border-radius: 1000px;
+    color: var(--color-text);
+    width: 100%;
+    padding: 5px 1ch;
+    border-right: 0.7rem solid transparent;
+}
+
+.instructions {
+    font-size: 0.85em;
+    color: var(--color-text);
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+}
+
+#resetBtn {
+    background: var(--color-base-01);
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#resetBtn:hover {
+    background: var(--color-base-02);
+}
+
+#saveBtn {
+    background: var(--color-accent-01);
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#saveBtn:hover {
+    background: var(--color-accent-02);
+}
+
+.material-symbols-rounded {
+    cursor: pointer;
+}
+
+#curveContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+#xAxisPreview {
+    border-radius: 5px;
+    height: 20px;
+    width: calc(100% - 40px);
+    background: white;
+    padding: 0 20px;
+}
+
+#xAxisPreview.h {
+    background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+}
+
+#xAxisPreview.s {
+    background: linear-gradient(to right, grey, red);
+}
+
+#xAxisPreview.l {
+    background: linear-gradient(to right, black, white);
+}
+
+#yAxisPreview {
+    border-radius: 5px;
+    width: 20px;
+    height: calc(100% - 40px);
+    background: white;
+    padding: 20px 0;
+}
+
+#yAxisPreview.h {
+    background: linear-gradient(to top, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+}
+
+#yAxisPreview.s {
+    background: linear-gradient(to top, grey, red);
+}
+
+#yAxisPreview.l {
+    background: linear-gradient(to top, black, white);
+}
